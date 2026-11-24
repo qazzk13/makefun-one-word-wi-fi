@@ -3,17 +3,21 @@ process.umask(0o022);
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// The word: Buffering
+// The word: Connectedish
 //
-// That is the whole relationship, really. The little wheel shows up,
-// the video gives up, and everyone in the house just waits and stares
-// at it like it owes them money. It works fine for ten minutes and
-// then, right at the good part, buffering.
+// First draft said "Buffering", and it is true, but everybody says
+// buffering. The ruder thing my Wi-Fi actually does: the phone says
+// Connected, full bars, green tick, and then nothing loads. Connected,
+// ish. It lies to me politely, every single day, usually while I am
+// standing right next to the router.
+//
+// It would also make a good network name. Guests ask for the Wi-Fi,
+// you say "Connectedish", and they have been warned.
 //
 // Gate: /output/entry.txt has to be UTF-8 text of 1 to 20 characters,
-// not only whitespace. "Buffering" is 9 characters, one word, no
+// not only whitespace. "Connectedish" is 12 characters, one word, no
 // trailing newline.
-const WORD = "Buffering";
+const WORD = "Connectedish";
 
 if (WORD.length < 1 || WORD.length > 20 || WORD.trim() === "" || /\s/.test(WORD)) {
   throw new Error(`entry would fail the gate: ${JSON.stringify(WORD)}`);
